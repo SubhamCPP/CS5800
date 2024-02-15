@@ -13,7 +13,7 @@ public class Main {
         advancedSoftwareEngineering.addInstructor(nima);
         advancedSoftwareEngineering.addTextbook(cleanCode);
 
-        // Print details for Advanced Software Engineering with one instructor and one textbook
+        // Printing details for Advanced Software Engineering with one instructor and one textbook
         System.out.println("=== Advanced Software Engineering Course (Initial) ===");
         advancedSoftwareEngineering.printCourseDetails();
 
@@ -21,7 +21,7 @@ public class Main {
         advancedSoftwareEngineering.addInstructor(alice);
         advancedSoftwareEngineering.addTextbook(effectiveJava); // Adding the second textbook
 
-        // Print details for Advanced Software Engineering with two instructors and two textbooks
+        // Printing details for Advanced Software Engineering with two instructors and two textbooks
         System.out.println("\n=== Advanced Software Engineering Course (Updated) ===");
         advancedSoftwareEngineering.printCourseDetails();
     }

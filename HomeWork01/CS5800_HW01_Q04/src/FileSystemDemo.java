@@ -28,20 +28,20 @@ public class FileSystemDemo {
         // Adding Source Files folder to root
         root.addFolder(sourceFiles);
 
-        // Include Path and Remote Files are separate folders in the root
+        // Included Path and Remote Files are separate folders in the root
         root.addFolder(new Folder("Include Path"));
         root.addFolder(new Folder("Remote Files"));
 
-        // Print out the initial structure
+        // Printed out the initial structure
         System.out.println("Initial Structure:");
         root.print("");
 
-        // Delete the 'app' folder and print the structure
+        // Deleted the 'app' folder and print the structure
         sourceFiles.removeFolder("app");
         System.out.println("\nAfter deleting 'app' folder:");
         root.print("");
 
-        // Delete the 'public' folder and print the structure
+        // Deleted the 'public' folder and print the structure
         sourceFiles.removeFolder("public");
         System.out.println("\nAfter deleting 'public' folder:");
         root.print("");

@@ -27,7 +27,7 @@ public class Course {
             Instructor instructor = instructors.get(i);
             System.out.println("Instructor: " + instructor.getFirstName() + " " + instructor.getLastName() + ", Office: " + instructor.getOfficeNumber());
 
-            // Check if there is a corresponding textbook for the current instructor
+            // Checking if there is a corresponding textbook for the current instructor
             if (i < textbooks.size()) {
                 Textbook textbook = textbooks.get(i);
                 System.out.println("Textbook: " + textbook.getTitle() + " by " + textbook.getAuthor());

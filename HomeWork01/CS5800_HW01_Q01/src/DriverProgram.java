@@ -1,4 +1,4 @@
-// DriverProgram.java - Update to include BaseEmployee and correct data assignment
+// DriverProgram.java
 public class DriverProgram {
     public static void main(String[] args) {
         SalariedEmployee salariedEmployee = new SalariedEmployee("Joe", "Jones", "111-11-1111", 2500);
@@ -9,7 +9,7 @@ public class DriverProgram {
         BaseEmployee baseEmployee = new BaseEmployee("Mike", "Davenport", "666-66-6666", 95000);
         CommissionEmployee commissionEmployee2 = new CommissionEmployee("Mahnaz", "Vaziri", "777-77-7777", 0.22, 40000);
 
-        // Print details of each employee
+        // Printing details of each employee
         printEmployeeDetails(salariedEmployee);
         printEmployeeDetails(hourlyEmployee);
         printEmployeeDetails(hourlyEmployee2);
