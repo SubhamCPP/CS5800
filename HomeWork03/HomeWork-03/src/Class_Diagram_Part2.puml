@@ -1,0 +1,39 @@
+@startuml
+
+' Definition for the base Ship class
+class Ship {
+    #shipName : String
+    #yearBuilt : String
+
+    +Ship(shipName : String, yearBuilt : String)
+    +setShipName(shipName : String) : void
+    +getShipName() : String
+    +setYearBuilt(yearBuilt : String) : void
+    +getYearBuilt() : String
+    +printShip() : void
+}
+
+' Definition for the CruiseShip class that extends Ship
+class CruiseShip extends Ship {
+    -maxNumberPassengers : int
+
+    +CruiseShip(shipName : String, yearBuilt : String, maxNumberPassengers : int)
+    +setMaxNumberPassengers(maxNumberPassengers : int) : void
+    +getMaxNumberPassengers() : int
+    +printShip() : void
+}
+
+' Definition for the CargoShip class that extends Ship
+class CargoShip extends Ship {
+    -cargoCapacityInTonnage : int
+
+    +CargoShip(shipName : String, yearBuilt : String, cargoCapacityInTonnage : int)
+    +setCargoCapacityInTonnage(cargoCapacityInTonnage : int) : void
+    +getCargoCapacityInTonnage() : int
+    +printShip() : void
+}
+
+Ship <|-- CruiseShip
+Ship <|-- CargoShip
+
+@enduml

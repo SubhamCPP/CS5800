@@ -1,0 +1,23 @@
+@startuml
+
+object "Ship : Titanic" as Ship1 {
+  shipName = "Titanic"
+  yearBuilt = "1909"
+}
+
+object "CruiseShip : MV Gemini" as CruiseShip1 {
+  shipName = "MV Gemini"
+  yearBuilt = "1991"
+  maxNumberPassengers = 100
+}
+
+object "CargoShip : Ever Given" as CargoShip1 {
+  shipName = "Ever Given"
+  yearBuilt = "2018"
+  cargoCapacityInTonnage = 220940
+}
+
+Ship1 <-- CruiseShip1 : Inherits
+Ship1 <-- CargoShip1 : Inherits
+
+@enduml
