@@ -14,15 +14,15 @@ abstract class Employee {
 }
 
 class SalariedEmployee {
-  -weeklySalary : int
+  ~weeklySalary : int
   +getWeeklySalary() : int
   +setWeeklySalary(weeklySalary : int) : void
   +toString() : String
 }
 
 class HourlyEmployee {
-  -wage : int
-  -hoursWorked : int
+  ~wage : int
+  ~hoursWorked : int
   +getWage() : int
   +setWage(wage : int) : void
   +getHoursWorked() : int
@@ -31,8 +31,8 @@ class HourlyEmployee {
 }
 
 class CommisionEmployee {
-  -commissionRate : int
-  -grossSales : int
+  ~commissionRate : int
+  ~grossSales : int
   +getCommissionRate() : int
   +setCommissionRate(commissionRate : int) : void
   +getGrossSales() : int
@@ -41,7 +41,7 @@ class CommisionEmployee {
 }
 
 class BaseEmployee {
-  -baseSalary : int
+  ~baseSalary : int
   +getBaseSalary() : int
   +setBaseSalary(baseSalary : int) : void
   +toString() : String

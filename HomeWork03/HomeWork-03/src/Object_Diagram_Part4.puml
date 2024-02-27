@@ -2,69 +2,71 @@
 
 ' Define instances of Folder and File after the 'app' folder deletion
 
-object Folder {
+object "phpDemo1: Folder" as mainFolder {
   name = "php_demo1"
   files = []
   subfolders = ["Source Files", " Include Path", "Remote Files"]
 }
 
-object SubFolder1 {
+object "Source Files: Folder" as sf1 {
   name = "Source Files"
   files = []
   subfolders = [".phalcon", "cache", "public"]
 }
 
-object SubFolder1_1 {
+object  ".phalcon : Folder" as sf4 {
   name = ".phalcon"
   files = []
   subfolders = []
 }
 
-object SubFolder1_3 {
+object "cache : Folder" as sf5 {
   name = "cache"
   files = []
   subfolders = []
 }
 
-object SubFolder1_4 {
+object "public : Folder" as sf6 {
   name = "public"
   files = [".htaccess", ".htrouter.php", "index.html"]
   subfolders = []
 }
 
-object File1_4_1 {
+object ".htaccess: File" as f1 {
   name = ".htaccess"
 }
 
-object File1_4_2 {
+object ".htrouter.php : File" as f2 {
   name = ".htrouter.php"
 }
 
-object File1_4_3 {
+object "index.html : File" as f3 {
   name = "index.html"
 }
 
-object SubFolder2 {
+object "Include Path: Folder" as sf2 {
   name = "Include Path"
   files = []
   subfolders = []
 }
 
-object SubFolder3 {
+object "Remote Files" as sf3 {
   name = "Remote Files"
   files = []
   subfolders = []
 }
 
 ' Define the links representing the composition relationships
-Folder  *-- SubFolder1 : subfolder
-SubFolder1 *-- SubFolder1_1 : subfolder
-SubFolder1 *-- SubFolder1_3 : subfolder
-SubFolder1 *-- SubFolder1_4 : subfolder
-SubFolder1_4 *-- File1_4_1 : file
-SubFolder1_4 *-- File1_4_2 : file
-SubFolder1_4 *-- File1_4_3 : file
-Folder *-- SubFolder2 : subfolder
-Folder *-- SubFolder3 : subfolder
+mainFolder *-- sf1
+mainFolder *-- sf2
+mainFolder *-- sf3
+
+sf1 *-- sf4
+sf1 *-- sf5
+sf1 *-- sf6
+
+sf6 *-- f1
+sf6 *-- f2
+sf6 *-- f3
 
 @enduml

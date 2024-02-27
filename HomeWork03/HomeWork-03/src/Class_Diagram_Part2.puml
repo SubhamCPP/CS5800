@@ -15,7 +15,7 @@ class Ship {
 
 ' Definition for the CruiseShip class that extends Ship
 class CruiseShip extends Ship {
-    -maxNumberPassengers : int
+    ~maxNumberPassengers : int
 
     +CruiseShip(shipName : String, yearBuilt : String, maxNumberPassengers : int)
     +setMaxNumberPassengers(maxNumberPassengers : int) : void
@@ -25,7 +25,7 @@ class CruiseShip extends Ship {
 
 ' Definition for the CargoShip class that extends Ship
 class CargoShip extends Ship {
-    -cargoCapacityInTonnage : int
+    ~cargoCapacityInTonnage : int
 
     +CargoShip(shipName : String, yearBuilt : String, cargoCapacityInTonnage : int)
     +setCargoCapacityInTonnage(cargoCapacityInTonnage : int) : void
