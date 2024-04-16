@@ -1,11 +1,11 @@
+package org.example;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-/*
-* should have the sender,recipient(s), timestamp, and message content
-* */
+
 public class Message {
     private User sender;
     private List<User> receivers;
@@ -31,17 +31,20 @@ public class Message {
         this.timestamp = previousMessage.getTimestamp();
     }
 
+    public String getTextMessage(){
+        return textMessage;
+    }
+
     public List<User> getReceivers(){
         return receivers;
     }
+
 
     public User getSender(){
         return sender;
     }
 
-    public String getTextMessage(){
-        return textMessage;
-    }
+
 
     public String toString(){
         return String.format("%s: Message content: '%s'",

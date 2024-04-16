@@ -1,7 +1,9 @@
+package org.example;
+
 import java.util.Iterator;
 import java.util.List;
 
-public class Driver {
+public class MainSystem {
     private static final ChatServer chatServer = new ChatServer();
 
     public static void main(String[] args) {
