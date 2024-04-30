@@ -1,29 +1,62 @@
 package Q1.tests;
 
-import static org.junit.Assert.assertEquals;
-import java.io.IOException;
-import org.junit.Test;
-import Q1.Document;
+import Q1.Character;
 import Q1.CharacterProperties;
+import Q1.Document;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.io.*;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 
 public class DocumentTest {
+    private static final String TEST_FILE = "test_document.txt";
+    private Document document;
 
-    @Test
-    public void testAddCharacterAndGetCharacters() {
-        Document document = new Document();
-        CharacterProperties properties = new CharacterProperties("Arial", "Red", 12);
-        document.addCharacter('H', properties);
-        assertEquals(1, document.getCharacters().size());
+    @Before
+    public void setUp() {
+        document = new Document();
+        document.addCharacter('A', new CharacterProperties("Arial", "Black", 12));
+        document.addCharacter('B', new CharacterProperties("Times New Roman", "Red", 14));
     }
 
     @Test
-    public void testSaveAndLoad() throws IOException, ClassNotFoundException {
-        Document document1 = new Document();
-        CharacterProperties properties = new CharacterProperties("Arial", "Red", 12);
-        document1.addCharacter('H', properties);
-        document1.save("test_document.ser");
+    public void testAddCharacter() {
+        List<Character> characters = document.getCharacters();
+        assertEquals(2, characters.size());
+        assertEquals('A', characters.get(0).getCharacter());
+        assertEquals("Arial", characters.get(0).getProperties().getFont());
+        assertEquals(12, characters.get(0).getProperties().getSize());
+        assertEquals('B', characters.get(1).getCharacter());
+        assertEquals("Times New Roman", characters.get(1).getProperties().getFont());
+        assertEquals(14, characters.get(1).getProperties().getSize());
+    }
 
-        Document document2 = Document.load("test_document.ser");
-        assertEquals(1, document2.getCharacters().size());
+    @Test
+    public void testSaveAndLoad() throws IOException {
+        document.save(TEST_FILE);
+        Document loadedDoc = Document.load(TEST_FILE);
+        List<Character> characters = loadedDoc.getCharacters();
+        assertEquals(2, characters.size());
+        assertEquals('A', characters.get(0).getCharacter());
+        assertEquals("Arial", characters.get(0).getProperties().getFont());
+        assertEquals(12, characters.get(0).getProperties().getSize());
+        assertEquals('B', characters.get(1).getCharacter());
+        assertEquals("Times New Roman", characters.get(1).getProperties().getFont());
+        assertEquals(14, characters.get(1).getProperties().getSize());
+    }
+
+    @After
+    public void tearDown() {
+        File file = new File(TEST_FILE);
+        if (file.exists()) {
+            assertTrue(file.delete());
+        }
     }
 }

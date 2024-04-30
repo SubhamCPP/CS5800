@@ -1,8 +1,8 @@
 package Q2.tests;
 
-import org.junit.Test;
 import Q2.RealSongService;
 import Q2.Song;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

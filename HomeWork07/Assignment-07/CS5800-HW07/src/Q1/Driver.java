@@ -5,22 +5,22 @@ import java.io.IOException;
 public class Driver {
     public static void main(String[] args) {
         Document document = new Document();
-        document.addCharacter('H', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('e', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('l', new CharacterProperties("Calibri", "Blue", 14));
-        document.addCharacter('l', new CharacterProperties("Verdana", "Black", 16));
-        document.addCharacter('o', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('W', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('o', new CharacterProperties("Calibri", "Blue", 14));
-        document.addCharacter('r', new CharacterProperties("Verdana", "Black", 16));
-        document.addCharacter('l', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('d', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('C', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('S', new CharacterProperties("Calibri", "Blue", 14));
-        document.addCharacter('5', new CharacterProperties("Verdana", "Black", 16));
-        document.addCharacter('8', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('0', new CharacterProperties("Arial", "Red", 12));
-        document.addCharacter('0', new CharacterProperties("Calibri", "Blue", 14));
+        document.addCharacter('H', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('e', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('l', FlyweightFactory.getCharacterProperties("Calibri", "Blue", 14));
+        document.addCharacter('l', FlyweightFactory.getCharacterProperties("Verdana", "Black", 16));
+        document.addCharacter('o', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('W', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('o', FlyweightFactory.getCharacterProperties("Calibri", "Blue", 14));
+        document.addCharacter('r', FlyweightFactory.getCharacterProperties("Verdana", "Black", 16));
+        document.addCharacter('l', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('d', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('C', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('S', FlyweightFactory.getCharacterProperties("Calibri", "Blue", 14));
+        document.addCharacter('5', FlyweightFactory.getCharacterProperties("Verdana", "Black", 16));
+        document.addCharacter('8', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('0', FlyweightFactory.getCharacterProperties("Arial", "Red", 12));
+        document.addCharacter('0', FlyweightFactory.getCharacterProperties("Calibri", "Blue", 14));
 
         try {
             document.save("example_document.txt");
